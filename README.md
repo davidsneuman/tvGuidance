@@ -15,12 +15,12 @@ Not too long ago, streaming services were not a thing! To find out if a movie or
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
-- **Category:**
-- **Mobile:**
-- **Story:**
-- **Market:**
-- **Habit:**
-- **Scope:**
+- **Category:** Movie and TV indexing
+- **Mobile:** Mobile first experience
+- **Story:** Allows users to search for Movie/TV show giving all streaming platforms
+- **Market:** Anyone who uses streaming platform
+- **Habit:** Anytime someone is going to watch a new show
+- **Scope:** Potential for larger scope (see optional stories)
 
 ## Product Spec
 
