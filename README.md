@@ -53,11 +53,13 @@ Not too long ago, streaming services were not a thing! To find out if a movie or
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="/assets/tv_guidance_wireframes.jpg" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
+<img src="/assets/tv_guidance_wireframes.jpg" width=600>
 
 ### [BONUS] Interactive Prototype
+<img src="http://g.recordit.co/avk8nB5I11.gif" width=600>
 
 ## Schema 
 [This section will be completed in Unit 9]
