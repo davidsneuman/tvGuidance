@@ -36,6 +36,7 @@ Not too long ago, streaming services were not a thing! To find out if a movie or
 * Specified search: only outputs services for searched item that user has
 * Home page of recommended movies/shows for all platforms user has
 * If show is unavailable, give recommendations
+* Allow users to watch show from app links
 
 ### 2. Screen Archetypes
 
