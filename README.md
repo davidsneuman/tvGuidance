@@ -65,8 +65,32 @@ Not too long ago, streaming services were not a thing! To find out if a movie or
 ## Schema 
 [This section will be completed in Unit 9]
 ### Models
-[Add table of models]
+
+#### Home Search Screen
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | searchID        | String   | name of movie/TVshow user is searching for |
+
+#### Detail View
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | image         | file     | image of movie/TVshow|
+   | nameID        | String   | name of movie/TVshow |
+   | streamLogo    | file     | image of streaming service logo |
+
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+- Home Search Screen 
+    - (Read/GET) Return logo of streaming service offering movie/tv show user searched for. 
+
+### **Existing API endpoints**
+**The Movie Database (TMDB) API**
+- Base URL - https://developers.themoviedb.org/3/getting-started
+
+| HTTP Verb  | Endpoint | Description |
+| ------------- | ------------- | -------------|
+|`GET`| /search/multi | Search for movies, tv shows in a single request. |
+|`GET`| /watch/providers/movie  | Returns a list of the watch provider (OTT/streaming) data for movies. |
+|`GET`| /watch/providers/tv  | Returns a list of the watch provider (OTT/streaming) data for TV series. |
+
