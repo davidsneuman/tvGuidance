@@ -82,6 +82,11 @@ Not too long ago, streaming services were not a thing! To find out if a movie or
 
 ### Networking
 - Home Search Screen 
+    - (Read/GET) search for movie/tv show given by user.
+    
+- Detail View Screen 
+    - (Read/GET) Return name of movie/tv show. 
+    - (Read/GET) Return poster of movie/tv show. 
     - (Read/GET) Return logo of streaming service offering movie/tv show user searched for. 
 
 ### **Existing API endpoints**
