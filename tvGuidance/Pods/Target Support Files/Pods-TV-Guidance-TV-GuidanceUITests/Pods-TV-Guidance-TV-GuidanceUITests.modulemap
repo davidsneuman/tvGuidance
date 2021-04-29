@@ -1,0 +1,6 @@
+framework module Pods_TV_Guidance_TV_GuidanceUITests {
+  umbrella header "Pods-TV-Guidance-TV-GuidanceUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

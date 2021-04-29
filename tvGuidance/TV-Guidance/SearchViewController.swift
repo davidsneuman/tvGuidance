@@ -8,7 +8,9 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-
+    
+    
+    var tvShows = [[String: Any]]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -16,7 +18,7 @@ class SearchViewController: UIViewController {
         self.view.addGestureRecognizer(tap)
 
         // Do any additional setup after loading the view.
-        let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
+        let url = URL(string: "https://api.themoviedb.org/3/search/tv?api_key=081cd3e558e599982d21d7d81eecb1cc")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in
@@ -27,6 +29,8 @@ class SearchViewController: UIViewController {
                     let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
 
                     // TODO: Get the array of movies
+                
+                self.tvShows = dataDictionary["results"] as! [[String: Any]]
                     // TODO: Store the movies in a property to use elsewhere
                     // TODO: Reload your table view data
 
