@@ -60,7 +60,7 @@ Not too long ago, streaming services were not a thing! To find out if a movie or
 <img src="/assets/tv_guidance_wireframes.jpg" width=600>
 
 ### [BONUS] Interactive Prototype
-<img src="http://g.recordit.co/avk8nB5I11.gif" width=600>
+<img src="http://g.recordit.co/wNsLlWfWBM.gif" width=600>
 
 ## Schema 
 [This section will be completed in Unit 9]
@@ -104,6 +104,8 @@ Not too long ago, streaming services were not a thing! To find out if a movie or
 ### **Existing API endpoints**
 **The Movie Database (TMDB) API**
 - Base URL - https://developers.themoviedb.org/3/getting-started
+
+
 
 | HTTP Verb  | Endpoint | Description |
 | ------------- | ------------- | -------------|
