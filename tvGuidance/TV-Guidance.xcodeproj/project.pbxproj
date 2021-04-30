@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,11 +14,11 @@
 		06811D3E2633C81F000AFA57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06811D3C2633C81F000AFA57 /* LaunchScreen.storyboard */; };
 		06811D492633C820000AFA57 /* TV_GuidanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06811D482633C820000AFA57 /* TV_GuidanceTests.swift */; };
 		06811D542633C820000AFA57 /* TV_GuidanceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06811D532633C820000AFA57 /* TV_GuidanceUITests.swift */; };
-		06811D682633CE33000AFA57 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06811D672633CE33000AFA57 /* SearchViewController.swift */; };
 		06811D752633FD98000AFA57 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06811D742633FD98000AFA57 /* MovieDetailsViewController.swift */; };
 		39916330B3E088E20E56BECF /* Pods_TV_GuidanceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9DE5BEECA795C2D16ECE89D /* Pods_TV_GuidanceTests.framework */; };
 		5D3CF322AC33DD11BC9F37C3 /* Pods_TV_Guidance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD9403688C2EF9ABA5C1CB5C /* Pods_TV_Guidance.framework */; };
 		9EC6277A48DC6D49D75745F8 /* Pods_TV_Guidance_TV_GuidanceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99747E17B3D804EF2FB5277A /* Pods_TV_Guidance_TV_GuidanceUITests.framework */; };
+		D8DE306E263C57B00029B49D /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DE306D263C57B00029B49D /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +53,6 @@
 		06811D4F2633C820000AFA57 /* TV-GuidanceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TV-GuidanceUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06811D532633C820000AFA57 /* TV_GuidanceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TV_GuidanceUITests.swift; sourceTree = "<group>"; };
 		06811D552633C820000AFA57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		06811D672633CE33000AFA57 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		06811D742633FD98000AFA57 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		26DE756CFB1ECC04F01B75A6 /* Pods-TV-GuidanceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TV-GuidanceTests.debug.xcconfig"; path = "Target Support Files/Pods-TV-GuidanceTests/Pods-TV-GuidanceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5118977692345CC8978E3BF2 /* Pods-TV-Guidance-TV-GuidanceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TV-Guidance-TV-GuidanceUITests.release.xcconfig"; path = "Target Support Files/Pods-TV-Guidance-TV-GuidanceUITests/Pods-TV-Guidance-TV-GuidanceUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -62,6 +61,7 @@
 		99747E17B3D804EF2FB5277A /* Pods_TV_Guidance_TV_GuidanceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TV_Guidance_TV_GuidanceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD9403688C2EF9ABA5C1CB5C /* Pods_TV_Guidance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TV_Guidance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9DE5BEECA795C2D16ECE89D /* Pods_TV_GuidanceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TV_GuidanceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8DE306D263C57B00029B49D /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		F8638B31B751128C6C8E3299 /* Pods-TV-Guidance-TV-GuidanceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TV-Guidance-TV-GuidanceUITests.debug.xcconfig"; path = "Target Support Files/Pods-TV-Guidance-TV-GuidanceUITests/Pods-TV-Guidance-TV-GuidanceUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,7 +118,6 @@
 		06811D302633C81E000AFA57 /* TV-Guidance */ = {
 			isa = PBXGroup;
 			children = (
-				06811D672633CE33000AFA57 /* SearchViewController.swift */,
 				06811D312633C81E000AFA57 /* AppDelegate.swift */,
 				06811D332633C81E000AFA57 /* SceneDelegate.swift */,
 				06811D372633C81E000AFA57 /* Main.storyboard */,
@@ -126,6 +125,7 @@
 				06811D3C2633C81F000AFA57 /* LaunchScreen.storyboard */,
 				06811D3F2633C81F000AFA57 /* Info.plist */,
 				06811D742633FD98000AFA57 /* MovieDetailsViewController.swift */,
+				D8DE306D263C57B00029B49D /* SearchResultsTableViewController.swift */,
 			);
 			path = "TV-Guidance";
 			sourceTree = "<group>";
@@ -168,7 +168,6 @@
 				26DE756CFB1ECC04F01B75A6 /* Pods-TV-GuidanceTests.debug.xcconfig */,
 				01CBC5E0E4C21444EF3349A5 /* Pods-TV-GuidanceTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -411,8 +410,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				06811D752633FD98000AFA57 /* MovieDetailsViewController.swift in Sources */,
-				06811D682633CE33000AFA57 /* SearchViewController.swift in Sources */,
 				06811D322633C81E000AFA57 /* AppDelegate.swift in Sources */,
+				D8DE306E263C57B00029B49D /* SearchResultsTableViewController.swift in Sources */,
 				06811D342633C81E000AFA57 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

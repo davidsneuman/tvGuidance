@@ -60,6 +60,8 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
         
         titleLabel.text = tvShow["original_name"] as? String
         
+        
+        
         let baseUrl = "https://image.tmdb.org/t/p/w342"
         let posterPath = tvShow["poster_path"] as! String
         let posterUrl = URL(string: baseUrl + posterPath)!
