@@ -71,6 +71,13 @@ Not too long ago, streaming services were not a thing! To find out if a movie or
    | Property      | Type     | Description |
    | ------------- | -------- | ------------|
    | searchID        | String   | name of movie/TVshow user is searching for |
+   
+#### Search Results Screen
+| Property      | Type     | Description |
+| ------------- | -------- | ------------|
+| image        | file   | image of movie/TVshow |
+| nameID     | String   | name of movie/TVshow | 
+| synopsisID  | String  | description of the movie/TVshow  |
 
 #### Detail View
 
@@ -84,6 +91,11 @@ Not too long ago, streaming services were not a thing! To find out if a movie or
 - Home Search Screen 
     - (Read/GET) search for movie/tv show given by user.
     
+- Search Results View Screen 
+    - (Read/GET) Return name of movie/tv show. 
+    - (Read/GET) Return poster of movie/tv show. 
+    - (Read/GET) Return Synopsis of the movie/tv show. 
+
 - Detail View Screen 
     - (Read/GET) Return name of movie/tv show. 
     - (Read/GET) Return poster of movie/tv show. 
