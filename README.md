@@ -28,8 +28,8 @@ Not too long ago, streaming services were not a thing! To find out if a movie or
 
 **Required Must-have Stories**
 
-[] Search for movie/show, 
-[] show search results
+[] Search for movie/show.   
+[] show search results    
 [] app gives streaming platforms
 
 **Optional Nice-to-have Stories**
