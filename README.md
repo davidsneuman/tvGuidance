@@ -42,6 +42,7 @@ Not too long ago, streaming services were not a thing! To find out if a movie or
 
 * Search
    * Search bar screen
+   * Search results screen
    * detail view screen
 
 ### 3. Navigation
