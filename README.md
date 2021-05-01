@@ -42,6 +42,7 @@ Not too long ago, streaming services were not a thing! To find out if a movie or
 
 * Search
    * Search bar screen
+   * Search results screen
    * detail view screen
 
 ### 3. Navigation
@@ -54,10 +55,10 @@ Not too long ago, streaming services were not a thing! To find out if a movie or
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="/assets/tv_guidance_wireframes.png" width=600>
+<img src="/tvGuidance/assets/tv_guidance_wireframes.jpg" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
-<img src="/assets/tv_guidance_wireframes.png" width=600>
+<img src="/tvGuidance/assets/tv_guidance_wireframes.jpg" width=600>
 
 ### [BONUS] Interactive Prototype
 <img src="http://g.recordit.co/wNsLlWfWBM.gif" width=600>
