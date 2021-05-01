@@ -31,11 +31,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bqK-SF-fhr">
-                                <rect key="frame" x="0.0" y="698" width="414" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.19954489885035293" green="0.92446317377778675" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Gy-Wf-eAy">
                                 <rect key="frame" x="43" y="407" width="75" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -141,10 +136,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DJ4-hL-Vs4">
-                                <rect key="frame" x="0.0" y="698" width="414" height="18"/>
-                                <color key="backgroundColor" red="0.19954489889999999" green="0.92446317379999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BkR-Sy-SjG">
                                 <rect key="frame" x="0.0" y="381" width="414" height="301"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -191,12 +182,10 @@
                         <viewLayoutGuide key="safeArea" id="r1c-5x-Zax"/>
                         <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
-                            <constraint firstItem="DJ4-hL-Vs4" firstAttribute="bottom" secondItem="r1c-5x-Zax" secondAttribute="bottom" id="0YZ-TH-lLD"/>
                             <constraint firstItem="hbs-5t-dQd" firstAttribute="leading" secondItem="3q4-b8-VHw" secondAttribute="leading" id="11X-ff-l09"/>
                             <constraint firstItem="0Xf-zQ-wHT" firstAttribute="leading" secondItem="r1c-5x-Zax" secondAttribute="leading" id="3Pw-Gf-dpA"/>
                             <constraint firstItem="0Xf-zQ-wHT" firstAttribute="top" secondItem="r1c-5x-Zax" secondAttribute="top" constant="-44" id="6O2-Mk-Dp3"/>
                             <constraint firstItem="0Xf-zQ-wHT" firstAttribute="leading" secondItem="BkR-Sy-SjG" secondAttribute="leading" id="6rh-uR-fJG"/>
-                            <constraint firstItem="DJ4-hL-Vs4" firstAttribute="top" secondItem="BPi-Fg-xDx" secondAttribute="top" constant="698" id="9gk-zg-kTp"/>
                             <constraint firstItem="3q4-b8-VHw" firstAttribute="centerY" secondItem="BPi-Fg-xDx" secondAttribute="centerY" id="AeS-1T-Ley"/>
                             <constraint firstItem="0Xf-zQ-wHT" firstAttribute="trailing" secondItem="BkR-Sy-SjG" secondAttribute="trailing" id="Cq0-QF-Eys"/>
                             <constraint firstItem="r1c-5x-Zax" firstAttribute="bottom" secondItem="BkR-Sy-SjG" secondAttribute="bottom" constant="34" id="EXh-Ey-Z79"/>
@@ -205,9 +194,7 @@
                             <constraint firstItem="r1c-5x-Zax" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3q4-b8-VHw" secondAttribute="trailing" symbolic="YES" id="blB-cG-S9p"/>
                             <constraint firstItem="3q4-b8-VHw" firstAttribute="top" secondItem="hbs-5t-dQd" secondAttribute="bottom" constant="44" id="fHX-aU-YJe"/>
                             <constraint firstItem="r1c-5x-Zax" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hbs-5t-dQd" secondAttribute="trailing" symbolic="YES" id="iem-bO-ioX"/>
-                            <constraint firstItem="BkR-Sy-SjG" firstAttribute="trailing" secondItem="DJ4-hL-Vs4" secondAttribute="trailing" id="j06-ui-uTd"/>
                             <constraint firstItem="hbs-5t-dQd" firstAttribute="top" secondItem="0Xf-zQ-wHT" secondAttribute="bottom" constant="30" id="map-gM-uUh"/>
-                            <constraint firstItem="BkR-Sy-SjG" firstAttribute="leading" secondItem="DJ4-hL-Vs4" secondAttribute="leading" id="mrV-wd-NEE"/>
                             <constraint firstItem="hbs-5t-dQd" firstAttribute="leading" secondItem="BPi-Fg-xDx" secondAttribute="leadingMargin" id="pqS-Rk-kZ8"/>
                         </constraints>
                     </view>
@@ -232,7 +219,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.84024362470000002" green="0.0" blue="0.061599735519999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.99863666299999998" green="0.6490362287" blue="0.55292391780000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
