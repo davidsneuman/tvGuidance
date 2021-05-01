@@ -58,7 +58,7 @@ Not too long ago, streaming services were not a thing! To find out if a movie or
 <img src="tvGuidance/assets/tv_guidance_wireframes.png" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
-<img src="/assets/tv_guidance_wireframes.png" width=600>
+<img src="tvGuidance/assets/tv_guidance_wireframes.png" width=600>
 
 ### [BONUS] Interactive Prototype
 <img src="http://g.recordit.co/wNsLlWfWBM.gif" width=600>
