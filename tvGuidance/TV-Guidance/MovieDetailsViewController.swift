@@ -8,7 +8,7 @@
 import UIKit
 import AlamofireImage
 
-class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class MovieDetailsViewController: UIViewController {
 
     @IBOutlet weak var posterView: UIImageView!
     
@@ -24,10 +24,7 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
     var providersCollection: [String:Any]!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        providersCollectionView.delegate = self
-        providersCollectionView.dataSource = self
-        
+
         
         let layout = providersCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         
