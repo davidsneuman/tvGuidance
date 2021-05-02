@@ -40,6 +40,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="onPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aoO-Ie-DH4"/>
                                     <segue destination="KT6-Od-KoS" kind="show" id="RoW-Jv-JoS"/>
                                 </connections>
                             </button>
@@ -49,6 +50,9 @@
                         <gestureRecognizers/>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="nbR-yB-jPW"/>
+                    <connections>
+                        <outlet property="searchTextField" destination="MXp-ta-MHs" id="0fv-Su-7Rp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

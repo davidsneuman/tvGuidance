@@ -9,8 +9,10 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
+    @IBOutlet weak var searchTextField: UISearchTextField!
     
     var tvShows = [[String: Any]]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,7 +20,14 @@ class SearchViewController: UIViewController {
         self.view.addGestureRecognizer(tap)
 
         // Do any additional setup after loading the view.
-        let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
+
+    }
+    
+    
+    @IBAction func onPress(_ sender: Any) {
+        let searchText = searchTextField.text?.replacingOccurrences(of: " ", with: "%20")
+        
+        let url = URL(string: "https://api.themoviedb.org/3/search/multi?api_key=081cd3e558e599982d21d7d81eecb1cc&language=en-US&query=\(searchText ?? "")&page=1&include_adult=false")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in
@@ -33,12 +42,14 @@ class SearchViewController: UIViewController {
                 self.tvShows = dataDictionary["results"] as! [[String: Any]]
                     // TODO: Store the movies in a property to use elsewhere
                     // TODO: Reload your table view data
+                
+                print(dataDictionary)
 
              }
         }
         task.resume()
+        
     }
-    
     @objc func dismisskeyboard(){
         self.view.endEditing(true)
     }
