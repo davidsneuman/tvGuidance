@@ -7,38 +7,50 @@
 
 import UIKit
 
-class SearchResultsTableViewController: UITableViewController {
-
+class SearchResultsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var tvShows: [[String: Any]]!
+    
+    @IBOutlet var tableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        tableView.dataSource = self
+        tableView.delegate = self
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+//        let tvShow = tvShows[indexPath.row]
+//        let tvTitle = tvShow["original_name"] as! String
+//
+//        cell.textLabel?.text = tvTitle
+        
+        //Configure the cell...
+
+        return cell
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
 
 
     /*

@@ -40,8 +40,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="onPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aoO-Ie-DH4"/>
-                                    <segue destination="KT6-Od-KoS" kind="show" id="RoW-Jv-JoS"/>
+                                    <segue destination="KT6-Od-KoS" kind="show" id="udO-Ij-GjC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -112,12 +111,11 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="KT6-Od-KoS" id="xEN-vJ-Bl9"/>
-                            <outlet property="delegate" destination="KT6-Od-KoS" id="1z2-OA-g0t"/>
-                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="TKN-ho-ghI"/>
+                    <connections>
+                        <outlet property="tableView" destination="oj7-nA-ViX" id="Z9l-zd-rBX"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Crr-7g-8qN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -20,11 +20,22 @@ class SearchViewController: UIViewController {
         self.view.addGestureRecognizer(tap)
 
         // Do any additional setup after loading the view.
+        
 
     }
     
+
     
-    @IBAction func onPress(_ sender: Any) {
+    
+    @objc func dismisskeyboard(){
+        self.view.endEditing(true)
+    }
+    
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         let searchText = searchTextField.text?.replacingOccurrences(of: " ", with: "%20")
         
         let url = URL(string: "https://api.themoviedb.org/3/search/multi?api_key=081cd3e558e599982d21d7d81eecb1cc&language=en-US&query=\(searchText ?? "")&page=1&include_adult=false")!
@@ -43,31 +54,25 @@ class SearchViewController: UIViewController {
                     // TODO: Store the movies in a property to use elsewhere
                     // TODO: Reload your table view data
                 
-                print(dataDictionary)
+                
+               
+                
+                
 
              }
         }
+        
         task.resume()
+        // Get the new view controller using segue.destination.
+
+        // Pass the selected object to the new view controller.
+        let searchResultsViewController = segue.destination as! SearchResultsTableViewController
+        searchResultsViewController.tvShows = tvShows
+        
+        
+        
         
     }
-    @objc func dismisskeyboard(){
-        self.view.endEditing(true)
-    }
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        // Get the new view controller using segue.destination.
-//        let cell = sender as! UICollectionViewCell
-//        let indexPath = tableView.indexPath(for: cell)!
-//        let tvShow = tvShows[indexPath.row]
-//
-//        // Pass the selected object to the new view controller.
-//        let detailsViewController = segue.destination as! MovieDetailsViewController
-//        detailsViewController.tvShow = tvShow
-//
-//    }
     
 
 }
