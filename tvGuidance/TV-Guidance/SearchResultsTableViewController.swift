@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import AlamofireImage
 
-class SearchResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SearchResultsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var tvShows: [[String: Any]]!
     
@@ -16,7 +17,6 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(tvShows)
         tableView.dataSource = self
         tableView.delegate = self
         // Uncomment the following line to preserve selection between presentations
@@ -33,13 +33,31 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-//        let tvShow = tvShows[indexPath.row]
-//        let tvTitle = tvShow["original_name"] as! String
-//
-//        cell.textLabel?.text = tvTitle
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultsTableViewCell") as! SearchResultsTableViewCell
+        let tvShow = tvShows[indexPath.row]
+        var tvTitle = ""
         
-        //Configure the cell...
+        if tvShow["original_name"] != nil
+        {
+            tvTitle = tvShow["original_name"] as! String
+        }
+        else if tvShow["original_title"] != nil
+        {
+            tvTitle = tvShow["original_title"] as! String
+        }
+        
+        let synopsis = tvShow["overview"] as! String
+        cell.titleLabel.text = tvTitle
+        cell.synopsisLabel.text = synopsis
+        
+//        let baseUrl = "https://image.tmdb.org/t/p/w185"
+//        if tvShow["poster_path"] != nil {
+//            let posterPath = tvShow["poster_path"] as! String
+//        
+//        let posterUrl = URL(string: baseUrl + posterPath)
+//        
+//        cell.posterView.af.setImage(withURL: posterUrl!)
+//        }
 
         return cell
     }

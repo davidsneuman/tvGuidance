@@ -68,7 +68,7 @@ class SearchViewController: UIViewController {
 
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        let searchResultsViewController = segue.destination as! SearchResultsViewController
+        let searchResultsViewController = segue.destination as! SearchResultsTableViewController
         searchResultsViewController.tvShows = self.tvShows
         
 
