@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchResultsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SearchResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var tvShows: [[String: Any]]!
     
@@ -16,7 +16,7 @@ class SearchResultsTableViewController: UIViewController, UITableViewDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(tvShows)
         tableView.dataSource = self
         tableView.delegate = self
         // Uncomment the following line to preserve selection between presentations
@@ -29,7 +29,7 @@ class SearchResultsTableViewController: UIViewController, UITableViewDelegate, U
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return tvShows.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -31,10 +31,7 @@ class SearchViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    @IBAction func onPressSearch(_ sender: Any) {
         
         let searchText = searchTextField.text?.replacingOccurrences(of: " ", with: "%20")
         
@@ -54,20 +51,27 @@ class SearchViewController: UIViewController {
                     // TODO: Store the movies in a property to use elsewhere
                     // TODO: Reload your table view data
                 
-                
+                self.performSegue(withIdentifier: "resultsSegue", sender: self)
                
-                
-                
+
 
              }
         }
         
         task.resume()
-        // Get the new view controller using segue.destination.
+    }
+    // MARK: - Navigation
 
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+
+        // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        let searchResultsViewController = segue.destination as! SearchResultsTableViewController
-        searchResultsViewController.tvShows = tvShows
+        let searchResultsViewController = segue.destination as! SearchResultsViewController
+        searchResultsViewController.tvShows = self.tvShows
+        
+
         
         
         
