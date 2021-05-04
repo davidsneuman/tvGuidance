@@ -111,6 +111,7 @@ class SearchResultsTableViewController: UIViewController, UITableViewDelegate, U
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
@@ -119,12 +120,48 @@ class SearchResultsTableViewController: UIViewController, UITableViewDelegate, U
         let cell = sender as! UITableViewCell
         let indexPath = tableView.indexPath(for: cell)!
         let tvShow = tvShows[indexPath.row]
-        
+
         let detailsViewController = segue.destination as! MovieDetailsViewController
         detailsViewController.tvShow = tvShow
-        
+
         tableView.deselectRow(at: indexPath, animated: true)
+
+
+//
+//        //TO DO!!!!
+//        //Set up API Request for providers here
+//
+//
+//        let showId = tvShow["id"] as! Int
+//
+//
+//
+//
+//        let url = URL(string: "https://api.themoviedb.org/3/movie/\(showId)/watch/providers?api_key=081cd3e558e599982d21d7d81eecb1cc")!
+//        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
+//        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+//        let task = session.dataTask(with: request) { (data, response, error) in
+//             // This will run when the network request returns
+//             if let error = error {
+//                    print(error.localizedDescription)
+//             } else if let data = data {
+//                    let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+//
+//                    // TODO: Get the array of movies
+//
+//                self.providers = dataDictionary["results"] as! [[String: Any]]
+//
+//
+//
+//
+//
+//
+//             }
+//        }
+//
+//        task.resume()
     }
+ 
 
 
 }

@@ -21,6 +21,7 @@
 		D8DE306E263C57B00029B49D /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DE306D263C57B00029B49D /* SearchResultsTableViewController.swift */; };
 		D8DE3076263C5B2B0029B49D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DE3075263C5B2B0029B49D /* SearchViewController.swift */; };
 		E09238222640B59C00BFB45B /* SearchResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09238212640B59C00BFB45B /* SearchResultsTableViewCell.swift */; };
+		E092382F2640F99F00BFB45B /* WatchProviderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E092382E2640F99F00BFB45B /* WatchProviderCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		D8DE306D263C57B00029B49D /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		D8DE3075263C5B2B0029B49D /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E09238212640B59C00BFB45B /* SearchResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewCell.swift; sourceTree = "<group>"; };
+		E092382E2640F99F00BFB45B /* WatchProviderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProviderCell.swift; sourceTree = "<group>"; };
 		F8638B31B751128C6C8E3299 /* Pods-TV-Guidance-TV-GuidanceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TV-Guidance-TV-GuidanceUITests.debug.xcconfig"; path = "Target Support Files/Pods-TV-Guidance-TV-GuidanceUITests/Pods-TV-Guidance-TV-GuidanceUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,6 +127,7 @@
 				06811D312633C81E000AFA57 /* AppDelegate.swift */,
 				06811D332633C81E000AFA57 /* SceneDelegate.swift */,
 				06811D372633C81E000AFA57 /* Main.storyboard */,
+				E092382E2640F99F00BFB45B /* WatchProviderCell.swift */,
 				D8DE3075263C5B2B0029B49D /* SearchViewController.swift */,
 				06811D3A2633C81F000AFA57 /* Assets.xcassets */,
 				06811D3C2633C81F000AFA57 /* LaunchScreen.storyboard */,
@@ -416,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8DE3076263C5B2B0029B49D /* SearchViewController.swift in Sources */,
+				E092382F2640F99F00BFB45B /* WatchProviderCell.swift in Sources */,
 				06811D752633FD98000AFA57 /* MovieDetailsViewController.swift in Sources */,
 				E09238222640B59C00BFB45B /* SearchResultsTableViewCell.swift in Sources */,
 				06811D322633C81E000AFA57 /* AppDelegate.swift in Sources */,
