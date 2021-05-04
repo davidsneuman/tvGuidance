@@ -50,14 +50,15 @@ class SearchResultsTableViewController: UIViewController, UITableViewDelegate, U
         cell.titleLabel.text = tvTitle
         cell.synopsisLabel.text = synopsis
         
-//        let baseUrl = "https://image.tmdb.org/t/p/w185"
-//        if tvShow["poster_path"] != nil {
-//            let posterPath = tvShow["poster_path"] as! String
-//        
-//        let posterUrl = URL(string: baseUrl + posterPath)
-//        
-//        cell.posterView.af.setImage(withURL: posterUrl!)
-//        }
+        let baseUrl = "https://image.tmdb.org/t/p/w185"
+
+        if let posterPath = tvShow["poster_path"] as? String
+        {
+        let posterUrl = URL(string: baseUrl + posterPath)
+      
+        cell.posterView.af.setImage(withURL: posterUrl!)
+    }
+
 
         return cell
     }
