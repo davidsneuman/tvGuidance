@@ -15,20 +15,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TV GUIDANCE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Oj-7a-cwQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TV GUIDANCE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Oj-7a-cwQ">
                                 <rect key="frame" x="36" y="419" width="342" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="1024x1024" translatesAutoresizingMaskIntoConstraints="NO" id="C8c-04-tLL">
-                                <rect key="frame" x="-213" y="44" width="720" height="720"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="1024x1024" translatesAutoresizingMaskIntoConstraints="NO" id="C8c-04-tLL">
+                                <rect key="frame" x="-220" y="-108" width="720" height="984"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="720" id="Q9Y-Ef-raa"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="C8c-04-tLL" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="-220" id="DFL-1W-OH8"/>
+                            <constraint firstAttribute="bottom" secondItem="C8c-04-tLL" secondAttribute="bottom" constant="20" symbolic="YES" id="Zgd-d4-bwm"/>
+                            <constraint firstItem="3Oj-7a-cwQ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ZvZ-An-gn1"/>
+                            <constraint firstItem="3Oj-7a-cwQ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="eFz-YM-Fhq"/>
+                            <constraint firstItem="C8c-04-tLL" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="-108" id="i3r-dO-Evz"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
