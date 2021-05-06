@@ -31,10 +31,10 @@ Not too long ago, streaming services were not a thing! To find out if a movie or
 
 **Required Must-have Stories**
 
-[x] Search for movie/show.   
-[x] show search results
-[x] detail screen for each movie/show
-[] app gives streaming platforms
+-[x] Search for movie/show.   
+-[x] show search results
+-[x] detail screen for each movie/show
+-[] app gives streaming platforms
 
 **Optional Nice-to-have Stories**
 
