@@ -24,12 +24,16 @@ Not too long ago, streaming services were not a thing! To find out if a movie or
 
 ## Product Spec
 
+### Build Progress Prototype
+<img src="http://g.recordit.co/TOE55XPf0b.gif" width=300>
+
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
 
-[] Search for movie/show.   
-[] show search results    
+[x] Search for movie/show.   
+[x] show search results
+[x] detail screen for each movie/show
 [] app gives streaming platforms
 
 **Optional Nice-to-have Stories**
