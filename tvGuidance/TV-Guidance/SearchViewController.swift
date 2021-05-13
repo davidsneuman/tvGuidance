@@ -18,7 +18,9 @@ class SearchViewController: UIViewController {
         
         let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismisskeyboard))
         self.view.addGestureRecognizer(tap)
-
+        
+        searchTextField.clearButtonMode = .always
+        searchTextField.clearButtonMode = .whileEditing
         // Do any additional setup after loading the view.
         
 

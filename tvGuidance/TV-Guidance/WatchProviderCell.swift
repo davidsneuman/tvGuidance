@@ -9,6 +9,7 @@ import UIKit
 
 class WatchProviderCell: UICollectionViewCell {
     
-    @IBOutlet weak var logoView: UIView!
+    @IBOutlet weak var watchProviderLogo: UIImageView!
+    
     
 }

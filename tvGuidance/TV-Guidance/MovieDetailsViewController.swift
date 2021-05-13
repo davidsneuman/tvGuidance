@@ -8,7 +8,28 @@
 import UIKit
 import AlamofireImage
 
-class MovieDetailsViewController: UIViewController/*, UICollectionViewDataSource, UICollectionViewDelegate */{
+class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return usResults.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WatchProviderCell", for: indexPath) as! WatchProviderCell
+
+        
+        let usResult = usResults[indexPath.item]
+        
+        //var provider = providers[indexPath.item]
+
+        let baseProviderUrl = "https://image.tmdb.org/t/p/w185"
+        let logoPath = usResults["logo_path"] as! String
+        let providerLogoUrl = URL(string: baseProviderUrl + logoPath)
+
+        cell.watchProviderLogo.af_setImage(withURL: providerLogoUrl!)
+
+        return cell
+    }
+    
 
     
     
@@ -20,10 +41,13 @@ class MovieDetailsViewController: UIViewController/*, UICollectionViewDataSource
     
     
     var tvShow: [String:Any]!
-//    var tvShowProviders = [[String: Any]]()
-//    var providersCollection: [String:Any]!
+    var tvShowProvidersResults = [String: Any]()
+    var usResults = [String: Any]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
         
         var tvTitle = ""
         if tvShow["original_name"] != nil
@@ -54,23 +78,64 @@ class MovieDetailsViewController: UIViewController/*, UICollectionViewDataSource
       
         backdropView.af.setImage(withURL: backdropUrl!)
         }
+        
+        
+        // api call for watch providers
+        
+        let tvId = "\(tvShow["id"] ?? "")"
+        
+        let url = URL(string: "https://api.themoviedb.org/3/tv/\(tvId)/watch/providers?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
+        
+        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
+        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+        let task = session.dataTask(with: request) { (data, response, error) in
+             // This will run when the network request returns
+             if let error = error {
+                    print(error.localizedDescription)
+             } else if let data = data {
+                    let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+
+                    // TODO: Get the array of movies
+                
+                self.tvShowProvidersResults =  dataDictionary["results"] as! [String: Any]
+                self.usResults = self.tvShowProvidersResults["US"] as! [String: Any]
+                
+                
+                
+                    // TODO: Store the movies in a property to use elsewhere
+                    // TODO: Reload your table view data
+                self.collectionView.reloadData()
+                
+                print(self.usResults)
+                //print(providers)
+                
+               // print(resultsShows)
+               // print("us results are ----- ", usResults)
+                
+               
+
 
              }
+            
+        }
+        task.resume()
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+
  
     // TO DO!!!!!
     // Set up collection view with watch provider logos
-    /*
-func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    1
-}
-
-func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
 }
- */
-
-}
-//        task.resume()
+//
         
 //        titleLabel.text = tvShow["original_name"] as? String
 //
@@ -94,21 +159,7 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
         // Do any additional setup after loading the view.
 //    }
     
-//    func getProviders() {
-//
-//        let providersApiUrl = "https://api.themoviedb.org/3/tv/"
-//        let showId = tvShow["id"] as! String
-//        let endUrl = "/watch/providers?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed"
-//        let providersUrl = URL(string: providersApiUrl + showId + endUrl)
-//
-//
-//        if(tvShowProviders["provider_name"] == "fuboTV") {
-//            var image: UIImage = UIImage(named: "fubotv")!
-//            watchProvidersCell.contentView.af.setImage(image)
-//        }
-//
-//    }
-
+    
     /*
     // MARK: - Navigation
 
@@ -119,4 +170,4 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
     }
     */
 
-
+    
