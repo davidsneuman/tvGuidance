@@ -9,28 +9,6 @@ import UIKit
 import AlamofireImage
 
 class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return usResults.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WatchProviderCell", for: indexPath) as! WatchProviderCell
-
-        
-        let usResult = usResults[indexPath.item]
-        
-        //var provider = providers[indexPath.item]
-
-        let baseProviderUrl = "https://image.tmdb.org/t/p/w185"
-        let logoPath = usResults["logo_path"] as! String
-        let providerLogoUrl = URL(string: baseProviderUrl + logoPath)
-
-        cell.watchProviderLogo.af_setImage(withURL: providerLogoUrl!)
-
-        return cell
-    }
-    
-
     
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -43,6 +21,8 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
     var tvShow: [String:Any]!
     var tvShowProvidersResults = [String: Any]()
     var usResults = [String: Any]()
+    
+    var flatrate = [NSDictionary]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -99,6 +79,7 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
                 
                 self.tvShowProvidersResults =  dataDictionary["results"] as! [String: Any]
                 self.usResults = self.tvShowProvidersResults["US"] as! [String: Any]
+                self.flatrate = self.usResults["flatrate"] as! [NSDictionary]
                 
                 
                 
@@ -106,28 +87,36 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
                     // TODO: Reload your table view data
                 self.collectionView.reloadData()
                 
-                print(self.usResults)
-                //print(providers)
-                
-               // print(resultsShows)
-               // print("us results are ----- ", usResults)
-                
-               
-
 
              }
             
         }
         task.resume()
         
-        
-        
-        
-        
+    
     }
     
     
-    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return flatrate.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WatchProviderCell", for: indexPath) as! WatchProviderCell
+
+        
+        let providers = flatrate[indexPath.item]
+
+        let baseProviderUrl = "https://image.tmdb.org/t/p/w185"
+        let logoPath = providers["logo_path"] as! String
+        let providerLogoUrl = URL(string: baseProviderUrl + logoPath)
+        
+        print(providerLogoUrl)
+
+        cell.watchProviderLogo.af.setImage(withURL: providerLogoUrl!)
+
+        return cell
+    }
     
 
  
