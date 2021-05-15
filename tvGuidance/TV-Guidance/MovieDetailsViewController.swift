@@ -60,13 +60,24 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
         }
         
         
+        var url = URL(string: "")
         // api call for watch providers
+        if (tvShow["media_type"] as! String == "tv")
+        {
+            let tvId = "\(tvShow["id"] ?? "")"
+            url = URL(string: "https://api.themoviedb.org/3/tv/\(tvId)/watch/providers?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
+        }
+        else if (tvShow["media_type"] as! String == "movie")
+        {
+            let movieId = "\(tvShow["id"] ?? "")"
+            url = URL(string: "https://api.themoviedb.org/3/movie/\(movieId)/watch/providers?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
+        }
+        else
+        {
+            print("error in watch provider call")
+        }
         
-        let tvId = "\(tvShow["id"] ?? "")"
-        
-        let url = URL(string: "https://api.themoviedb.org/3/tv/\(tvId)/watch/providers?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
-        
-        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
+        let request = URLRequest(url: url!, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in
              // This will run when the network request returns
