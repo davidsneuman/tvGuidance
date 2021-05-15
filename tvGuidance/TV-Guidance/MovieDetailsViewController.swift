@@ -90,7 +90,7 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
                 
                 self.tvShowProvidersResults =  dataDictionary["results"] as! [String: Any]
                 self.usResults = self.tvShowProvidersResults["US"] as! [String: Any]
-                self.flatrate = self.usResults["flatrate"] as! [NSDictionary]
+                self.flatrate = self.usResults["flatrate"] as? [NSDictionary] ?? []
                 
                 
                 
@@ -120,12 +120,14 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
 
         let baseProviderUrl = "https://image.tmdb.org/t/p/w185"
         let logoPath = providers["logo_path"] as! String
+        if (logoPath != "")
+        {
         let providerLogoUrl = URL(string: baseProviderUrl + logoPath)
         
-        print(providerLogoUrl)
+        print(providerLogoUrl!)
 
         cell.watchProviderLogo.af.setImage(withURL: providerLogoUrl!)
-
+        }
         return cell
     }
     
