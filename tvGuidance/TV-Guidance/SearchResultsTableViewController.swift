@@ -46,7 +46,7 @@ class SearchResultsTableViewController: UIViewController, UITableViewDelegate, U
             tvTitle = tvShow["original_title"] as! String
         }
         
-        let synopsis = tvShow["overview"] as! String
+        let synopsis = tvShow["overview"] as? String ?? ""
         cell.titleLabel.text = tvTitle
         cell.synopsisLabel.text = synopsis
         

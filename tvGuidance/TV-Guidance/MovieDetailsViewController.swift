@@ -29,6 +29,18 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        // Collection view layout
+        
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        
+        layout.minimumLineSpacing = 4
+        layout.minimumInteritemSpacing = 4
+        
+        let width = (view.frame.size.width - layout.minimumInteritemSpacing * 2) / 3
+        layout.itemSize = CGSize(width: width, height: width * 5/6)
+        
+        
+        
         var tvTitle = ""
         if tvShow["original_name"] != nil
         {
@@ -88,8 +100,8 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
 
                     // TODO: Get the array of movies
                 
-                self.tvShowProvidersResults =  dataDictionary["results"] as! [String: Any]
-                self.usResults = self.tvShowProvidersResults["US"] as! [String: Any]
+                self.tvShowProvidersResults =  dataDictionary["results"] as? [String: Any] ?? [:]
+                self.usResults = self.tvShowProvidersResults["US"] as? [String: Any] ?? [:]
                 self.flatrate = self.usResults["flatrate"] as? [NSDictionary] ?? []
                 
                 
