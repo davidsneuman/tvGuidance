@@ -30,6 +30,8 @@ Not too long ago, streaming services were not a thing! To find out if a movie or
 ### Build Progress Prototype 2
 <img src="http://g.recordit.co/NVy71JxOSh.gif" width=300>
 
+### Build Progress Prototype 3: Final Prototype
+<img src="http://g.recordit.co/0kSPhExjJ5.gif" width=300>
 
 ### 1. User Stories (Required and Optional)
 
