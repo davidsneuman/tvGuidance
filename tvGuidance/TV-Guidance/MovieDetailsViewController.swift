@@ -33,11 +33,11 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
         
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         
-        layout.minimumLineSpacing = 4
-        layout.minimumInteritemSpacing = 4
+        layout.minimumLineSpacing = 5
+        layout.minimumInteritemSpacing = 5
         
-        let width = (view.frame.size.width - layout.minimumInteritemSpacing * 2) / 3
-        layout.itemSize = CGSize(width: width, height: width * 5/6)
+        let width = (view.frame.size.width - layout.minimumInteritemSpacing * 3) / 4
+        layout.itemSize = CGSize(width: width, height: width * 6/7)
         
         
         
@@ -56,7 +56,7 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
         synopsisLabel.text = tvShow["overview"] as! String
         synopsisLabel.sizeToFit()
         
-        let baseUrl = "https://image.tmdb.org/t/p/w185"
+        let baseUrl = "https://image.tmdb.org/t/p/w500"
 
         if let posterPath = tvShow["poster_path"] as? String
         {

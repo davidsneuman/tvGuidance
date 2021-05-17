@@ -10,32 +10,37 @@
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                <viewController interfaceStyle="dark" id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TV GUIDANCE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Oj-7a-cwQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TV GUIDANCE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Oj-7a-cwQ">
                                 <rect key="frame" x="36" y="419" width="342" height="58"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="1024x1024" translatesAutoresizingMaskIntoConstraints="NO" id="C8c-04-tLL">
-                                <rect key="frame" x="-220" y="-108" width="720" height="984"/>
+                            <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="1024x1024" translatesAutoresizingMaskIntoConstraints="NO" id="C8c-04-tLL">
+                                <rect key="frame" x="0.0" y="114" width="414" height="637"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="720" id="Q9Y-Ef-raa"/>
+                                    <constraint firstAttribute="width" constant="414" id="0iw-Yw-cuT"/>
+                                    <constraint firstAttribute="height" constant="637" id="woS-FF-uDG"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="C8c-04-tLL" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="-220" id="DFL-1W-OH8"/>
-                            <constraint firstAttribute="bottom" secondItem="C8c-04-tLL" secondAttribute="bottom" constant="20" symbolic="YES" id="Zgd-d4-bwm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Oj-7a-cwQ" secondAttribute="trailing" constant="36" id="B1d-UY-zkd"/>
+                            <constraint firstItem="3Oj-7a-cwQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="Bbo-3q-NmL"/>
+                            <constraint firstItem="C8c-04-tLL" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-15.5" id="C4B-du-der"/>
+                            <constraint firstItem="C8c-04-tLL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NwM-fe-cyp"/>
+                            <constraint firstItem="C8c-04-tLL" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Vbn-Qj-0eG"/>
                             <constraint firstItem="3Oj-7a-cwQ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ZvZ-An-gn1"/>
                             <constraint firstItem="3Oj-7a-cwQ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="eFz-YM-Fhq"/>
-                            <constraint firstItem="C8c-04-tLL" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="-108" id="i3r-dO-Evz"/>
+                            <constraint firstItem="C8c-04-tLL" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="mEm-N0-3s3"/>
                         </constraints>
                     </view>
                 </viewController>
