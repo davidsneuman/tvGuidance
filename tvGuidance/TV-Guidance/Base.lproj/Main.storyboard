@@ -177,7 +177,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fEq-RB-WRa">
-                                <rect key="frame" x="0.0" y="418.5" width="414" height="469.5"/>
+                                <rect key="frame" x="0.0" y="391" width="414" height="497"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1JW-OA-5bJ">
                                     <size key="itemSize" width="95" height="127"/>
@@ -211,26 +211,16 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the synopsis of the movie or TV show" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="gJy-Re-vvc">
-                                <rect key="frame" x="8" y="390" width="398" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bv-T3-12i">
-                                <rect key="frame" x="175" y="326" width="239" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="239" id="dI1-wc-RFu"/>
-                                </constraints>
+                                <rect key="frame" x="133" y="296" width="239" height="28"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u8g-7O-QgS">
-                                <rect key="frame" x="20" y="159" width="147" height="223"/>
+                                <rect key="frame" x="8" y="190" width="117" height="164"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="147" id="4ja-9w-erd"/>
-                                    <constraint firstAttribute="height" constant="223" id="G0r-e2-XR1"/>
+                                    <constraint firstAttribute="width" constant="117" id="31J-by-Dhr"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -238,29 +228,33 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the synopsis of the movie or TV show" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="7" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gJy-Re-vvc">
+                                <rect key="frame" x="8" y="362" width="398" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wV1-Qg-sux"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="0bv-T3-12i" firstAttribute="leading" secondItem="u8g-7O-QgS" secondAttribute="trailing" constant="8" symbolic="YES" id="1aI-k0-oBP"/>
+                            <constraint firstItem="gJy-Re-vvc" firstAttribute="top" secondItem="4wQ-3q-rLi" secondAttribute="top" constant="362" id="6AD-cN-Cmz"/>
                             <constraint firstItem="6rB-hI-Dcv" firstAttribute="trailing" secondItem="wV1-Qg-sux" secondAttribute="trailing" id="8kW-s2-xij"/>
-                            <constraint firstItem="gJy-Re-vvc" firstAttribute="top" secondItem="0bv-T3-12i" secondAttribute="bottom" constant="36" id="Gsh-WA-Z00"/>
-                            <constraint firstItem="gJy-Re-vvc" firstAttribute="top" secondItem="u8g-7O-QgS" secondAttribute="bottom" constant="8" symbolic="YES" id="GwR-gb-a0c"/>
                             <constraint firstItem="fEq-RB-WRa" firstAttribute="leading" secondItem="wV1-Qg-sux" secondAttribute="leading" id="HMf-eU-vX3"/>
-                            <constraint firstItem="wV1-Qg-sux" firstAttribute="trailing" secondItem="gJy-Re-vvc" secondAttribute="trailing" constant="8" id="OXK-1r-lfZ"/>
+                            <constraint firstItem="0bv-T3-12i" firstAttribute="top" secondItem="4wQ-3q-rLi" secondAttribute="top" constant="296" id="Izw-2f-6FL"/>
+                            <constraint firstItem="wV1-Qg-sux" firstAttribute="trailing" secondItem="0bv-T3-12i" secondAttribute="trailing" constant="42" id="J6G-gU-dQf"/>
+                            <constraint firstItem="gJy-Re-vvc" firstAttribute="top" secondItem="u8g-7O-QgS" secondAttribute="bottom" constant="8" symbolic="YES" id="Mgz-KV-Hjt"/>
                             <constraint firstAttribute="bottom" secondItem="fEq-RB-WRa" secondAttribute="bottom" constant="8" id="POC-Ne-oZb"/>
-                            <constraint firstItem="gJy-Re-vvc" firstAttribute="top" secondItem="u8g-7O-QgS" secondAttribute="bottom" constant="8" symbolic="YES" id="QCC-Wd-c4x"/>
-                            <constraint firstItem="0bv-T3-12i" firstAttribute="top" secondItem="6rB-hI-Dcv" secondAttribute="bottom" constant="38" id="QJQ-VR-VNL"/>
-                            <constraint firstItem="u8g-7O-QgS" firstAttribute="leading" secondItem="wV1-Qg-sux" secondAttribute="leading" constant="20" id="W4X-AG-yxh"/>
+                            <constraint firstItem="gJy-Re-vvc" firstAttribute="centerX" secondItem="6rB-hI-Dcv" secondAttribute="centerX" id="S1x-BR-b5g"/>
+                            <constraint firstItem="0bv-T3-12i" firstAttribute="top" secondItem="6rB-hI-Dcv" secondAttribute="bottom" constant="8" symbolic="YES" id="URH-9y-KZt"/>
                             <constraint firstItem="6rB-hI-Dcv" firstAttribute="leading" secondItem="wV1-Qg-sux" secondAttribute="leading" id="XZH-wZ-k8V"/>
+                            <constraint firstItem="fEq-RB-WRa" firstAttribute="top" secondItem="gJy-Re-vvc" secondAttribute="bottom" constant="8.5" id="XxF-st-SNb"/>
                             <constraint firstItem="6rB-hI-Dcv" firstAttribute="top" secondItem="wV1-Qg-sux" secondAttribute="top" id="aGL-Rn-PiO"/>
-                            <constraint firstItem="0bv-T3-12i" firstAttribute="top" secondItem="4wQ-3q-rLi" secondAttribute="top" constant="326" id="bLb-AT-CmD"/>
-                            <constraint firstItem="0bv-T3-12i" firstAttribute="bottom" secondItem="u8g-7O-QgS" secondAttribute="bottom" constant="-28" id="hf2-e8-oWC"/>
-                            <constraint firstItem="fEq-RB-WRa" firstAttribute="top" secondItem="gJy-Re-vvc" secondAttribute="bottom" constant="8" id="m2S-Ir-BbA"/>
+                            <constraint firstItem="gJy-Re-vvc" firstAttribute="leading" secondItem="u8g-7O-QgS" secondAttribute="leading" id="hlJ-oo-otw"/>
+                            <constraint firstItem="0bv-T3-12i" firstAttribute="leading" secondItem="u8g-7O-QgS" secondAttribute="trailing" constant="8" symbolic="YES" id="jIs-Jp-T5z"/>
                             <constraint firstItem="wV1-Qg-sux" firstAttribute="trailing" secondItem="fEq-RB-WRa" secondAttribute="trailing" id="pS3-0u-jaP"/>
-                            <constraint firstItem="0bv-T3-12i" firstAttribute="trailing" secondItem="4wQ-3q-rLi" secondAttribute="trailingMargin" constant="20" id="xFk-Nt-1PE"/>
-                            <constraint firstItem="fEq-RB-WRa" firstAttribute="top" secondItem="gJy-Re-vvc" secondAttribute="bottom" constant="8" id="xib-cw-L3j"/>
-                            <constraint firstItem="gJy-Re-vvc" firstAttribute="leading" secondItem="wV1-Qg-sux" secondAttribute="leading" constant="8" id="ym2-sp-tAE"/>
+                            <constraint firstItem="gJy-Re-vvc" firstAttribute="leading" secondItem="wV1-Qg-sux" secondAttribute="leading" constant="8" id="xdt-Qd-1by"/>
+                            <constraint firstItem="u8g-7O-QgS" firstAttribute="top" secondItem="wV1-Qg-sux" secondAttribute="top" constant="102" id="yfa-Ke-fhM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="drG-nP-uu7"/>

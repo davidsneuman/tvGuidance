@@ -21,8 +21,9 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
     var tvShow: [String:Any]!
     var tvShowProvidersResults = [String: Any]()
     var usResults = [String: Any]()
-    
     var flatrate = [NSDictionary]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
