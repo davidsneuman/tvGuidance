@@ -53,7 +53,7 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
         titleLabel.text = tvTitle
         titleLabel.sizeToFit()
         
-        synopsisLabel.text = tvShow["overview"] as! String
+        synopsisLabel.text = tvShow["overview"] as? String ?? ""
         synopsisLabel.sizeToFit()
         
         let baseUrl = "https://image.tmdb.org/t/p/w500"
@@ -89,7 +89,7 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
             print("error in watch provider call")
         }
         
-        let request = URLRequest(url: url!, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
+        let request = URLRequest(url: url! , cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in
              // This will run when the network request returns
@@ -121,12 +121,21 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if (flatrate.count == 0)
+        {
+            return 1
+        }
         return flatrate.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WatchProviderCell", for: indexPath) as! WatchProviderCell
 
+        if (flatrate.count == 0)
+        {
+            cell.watchProviderLogo.image = UIImage(named: "notAvailable")
+            return cell
+        }
         
         let providers = flatrate[indexPath.item]
 
@@ -134,12 +143,12 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
         let logoPath = providers["logo_path"] as! String
         if (logoPath != "")
         {
-        let providerLogoUrl = URL(string: baseProviderUrl + logoPath)
-        
-        print(providerLogoUrl!)
-
-        cell.watchProviderLogo.af.setImage(withURL: providerLogoUrl!)
+            let providerLogoUrl = URL(string: baseProviderUrl + logoPath)
+            print(providerLogoUrl!)
+            cell.watchProviderLogo.af.setImage(withURL: providerLogoUrl!)
         }
+        
+        
         return cell
     }
     

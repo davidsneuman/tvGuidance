@@ -31,11 +31,12 @@ class SearchResultsTableViewController: UIViewController, UITableViewDelegate, U
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tvShows.count
     }
+    
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultsTableViewCell") as! SearchResultsTableViewCell
         let tvShow = tvShows[indexPath.row]
-        var tvTitle = ""
+        var tvTitle = "Not Available"
         
         if tvShow["original_name"] != nil
         {
@@ -46,7 +47,7 @@ class SearchResultsTableViewController: UIViewController, UITableViewDelegate, U
             tvTitle = tvShow["original_title"] as! String
         }
         
-        let synopsis = tvShow["overview"] as? String ?? ""
+        let synopsis = tvShow["overview"] as? String ?? "Not available"
         cell.titleLabel.text = tvTitle
         cell.synopsisLabel.text = synopsis
         
@@ -54,13 +55,18 @@ class SearchResultsTableViewController: UIViewController, UITableViewDelegate, U
 
         if let posterPath = tvShow["poster_path"] as? String
         {
-        let posterUrl = URL(string: baseUrl + posterPath)
+            let posterUrl = URL(string: baseUrl + posterPath)
+            cell.posterView.af.setImage(withURL: posterUrl!)
+        }
+        
+        // if an unavailable movie-- disallow interaction to prevent error
+        if (tvTitle == "Not Available" || synopsis == "Not Available")
+        {
+            cell.isUserInteractionEnabled = false
+        }
       
-        cell.posterView.af.setImage(withURL: posterUrl!)
-    }
-
-
-        return cell
+            return cell
+        
     }
 
     // MARK: - Table view data source
