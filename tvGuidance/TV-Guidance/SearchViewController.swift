@@ -50,6 +50,19 @@ class SearchViewController: UIViewController {
                     // TODO: Get the array of movies
                 
                 self.tvShows = dataDictionary["results"] as! [[String: Any]]
+                
+                // filter results to only tv shows with title synopsis and poster
+                self.tvShows = self.tvShows.filter({ (tvShow:[String : Any]) -> Bool in
+
+                    let tvTitle = tvShow["original_name"] as? String ?? ""
+                    let movieTitle = tvShow["original_title"] as? String ?? ""
+                    let synopsis = tvShow["overview"] as? String ?? ""
+                    let posterPath = tvShow["poster_path"] as? String ?? ""
+
+                    return ((tvTitle != "" || movieTitle != "") && synopsis != "" && (posterPath != ""))
+
+
+                })
                     // TODO: Store the movies in a property to use elsewhere
                     // TODO: Reload your table view data
                 
@@ -62,6 +75,10 @@ class SearchViewController: UIViewController {
         
         task.resume()
     }
+    
+    
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
