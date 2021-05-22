@@ -38,6 +38,10 @@ class SearchResultsTableViewController: UIViewController, UITableViewDelegate, U
         let tvShow = tvShows[indexPath.row]
         var tvTitle = "Not Available"
         
+        if (tvShows.count == 0)
+        {
+            tvTitle = "No Results"
+        }
         if tvShow["original_name"] != nil
         {
             tvTitle = tvShow["original_name"] as! String

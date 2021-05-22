@@ -30,6 +30,7 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        
         // Collection view layout
         
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
@@ -154,6 +155,9 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
     }
     
 
+    
+    
+    
  
     // TO DO!!!!!
     // Set up collection view with watch provider logos
