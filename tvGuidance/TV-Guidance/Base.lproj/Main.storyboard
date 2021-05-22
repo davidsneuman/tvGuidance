@@ -178,7 +178,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fEq-RB-WRa">
-                                <rect key="frame" x="0.0" y="391" width="414" height="497"/>
+                                <rect key="frame" x="0.0" y="427.5" width="414" height="460.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1JW-OA-5bJ">
                                     <size key="itemSize" width="95" height="127"/>
@@ -228,32 +228,41 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the synopsis of the movie or TV show" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="7" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gJy-Re-vvc">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the synopsis of the movie or TV show" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="7" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gJy-Re-vvc">
                                 <rect key="frame" x="8" y="362" width="398" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Watch for free on:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ag-mS-ysV">
+                                <rect key="frame" x="8" y="398.5" width="145.5" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.99074572319999998" green="0.2840589583" blue="0.52158284190000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wV1-Qg-sux"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="fEq-RB-WRa" firstAttribute="top" secondItem="7ag-mS-ysV" secondAttribute="bottom" constant="8" symbolic="YES" id="4Pp-Cw-17e"/>
                             <constraint firstItem="gJy-Re-vvc" firstAttribute="top" secondItem="4wQ-3q-rLi" secondAttribute="top" constant="362" id="6AD-cN-Cmz"/>
                             <constraint firstItem="6rB-hI-Dcv" firstAttribute="trailing" secondItem="wV1-Qg-sux" secondAttribute="trailing" id="8kW-s2-xij"/>
                             <constraint firstItem="fEq-RB-WRa" firstAttribute="leading" secondItem="wV1-Qg-sux" secondAttribute="leading" id="HMf-eU-vX3"/>
                             <constraint firstItem="0bv-T3-12i" firstAttribute="top" secondItem="4wQ-3q-rLi" secondAttribute="top" constant="296" id="Izw-2f-6FL"/>
                             <constraint firstItem="wV1-Qg-sux" firstAttribute="trailing" secondItem="0bv-T3-12i" secondAttribute="trailing" constant="42" id="J6G-gU-dQf"/>
                             <constraint firstItem="gJy-Re-vvc" firstAttribute="top" secondItem="u8g-7O-QgS" secondAttribute="bottom" constant="8" symbolic="YES" id="Mgz-KV-Hjt"/>
+                            <constraint firstItem="7ag-mS-ysV" firstAttribute="top" secondItem="gJy-Re-vvc" secondAttribute="bottom" constant="16" id="NqY-gX-4xV"/>
                             <constraint firstAttribute="bottom" secondItem="fEq-RB-WRa" secondAttribute="bottom" constant="8" id="POC-Ne-oZb"/>
                             <constraint firstItem="gJy-Re-vvc" firstAttribute="centerX" secondItem="6rB-hI-Dcv" secondAttribute="centerX" id="S1x-BR-b5g"/>
                             <constraint firstItem="0bv-T3-12i" firstAttribute="top" secondItem="6rB-hI-Dcv" secondAttribute="bottom" constant="8" symbolic="YES" id="URH-9y-KZt"/>
                             <constraint firstItem="6rB-hI-Dcv" firstAttribute="leading" secondItem="wV1-Qg-sux" secondAttribute="leading" id="XZH-wZ-k8V"/>
-                            <constraint firstItem="fEq-RB-WRa" firstAttribute="top" secondItem="gJy-Re-vvc" secondAttribute="bottom" constant="8.5" id="XxF-st-SNb"/>
                             <constraint firstItem="6rB-hI-Dcv" firstAttribute="top" secondItem="wV1-Qg-sux" secondAttribute="top" id="aGL-Rn-PiO"/>
                             <constraint firstItem="gJy-Re-vvc" firstAttribute="leading" secondItem="u8g-7O-QgS" secondAttribute="leading" id="hlJ-oo-otw"/>
                             <constraint firstItem="0bv-T3-12i" firstAttribute="leading" secondItem="u8g-7O-QgS" secondAttribute="trailing" constant="8" symbolic="YES" id="jIs-Jp-T5z"/>
                             <constraint firstItem="wV1-Qg-sux" firstAttribute="trailing" secondItem="fEq-RB-WRa" secondAttribute="trailing" id="pS3-0u-jaP"/>
                             <constraint firstItem="gJy-Re-vvc" firstAttribute="leading" secondItem="wV1-Qg-sux" secondAttribute="leading" constant="8" id="xdt-Qd-1by"/>
                             <constraint firstItem="u8g-7O-QgS" firstAttribute="top" secondItem="wV1-Qg-sux" secondAttribute="top" constant="102" id="yfa-Ke-fhM"/>
+                            <constraint firstItem="fEq-RB-WRa" firstAttribute="top" secondItem="7ag-mS-ysV" secondAttribute="bottom" constant="8" id="z4j-LK-Htk"/>
+                            <constraint firstItem="7ag-mS-ysV" firstAttribute="leading" secondItem="wV1-Qg-sux" secondAttribute="leading" constant="8" id="zL2-qH-Njd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="drG-nP-uu7"/>
@@ -263,6 +272,7 @@
                         <outlet property="posterView" destination="u8g-7O-QgS" id="Dq1-22-eEu"/>
                         <outlet property="synopsisLabel" destination="gJy-Re-vvc" id="uzd-s9-LuT"/>
                         <outlet property="titleLabel" destination="0bv-T3-12i" id="bsy-ez-iGs"/>
+                        <outlet property="watchFreeLabel" destination="7ag-mS-ysV" id="hPs-8C-QzY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vai-Zw-UDC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
