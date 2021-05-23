@@ -10,15 +10,17 @@ import AlamofireImage
 
 class SearchResultsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var tvShows: [[String: Any]]!
+    var tvShows: [[String: Any]]!   //Results of multisearch API call passed from SearchViewController
     
     @IBOutlet var tableView: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.dataSource = self
         tableView.delegate = self
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -27,16 +29,20 @@ class SearchResultsTableViewController: UIViewController, UITableViewDelegate, U
         
         
     }
+    
+    // MARK: - Table view data source
+    
+    // Number of sections will either be 0 if no results from search or 1 to display table view
     func numberOfSections(in tableView: UITableView) -> Int
     {
         var numOfSections: Int = 0
-        if (tvShows.count != 0)
+        if (tvShows.count != 0) //If there are results, display table view
         {
             tableView.separatorStyle = .singleLine
             numOfSections            = 1
             tableView.backgroundView = nil
         }
-        else // No results from API Call
+        else // No results from API Call, display "No Results"
         {
             let noDataLabel: UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
             noDataLabel.text          = "No Results"
@@ -48,30 +54,31 @@ class SearchResultsTableViewController: UIViewController, UITableViewDelegate, U
         return numOfSections
     }
     
+    //  Number of Rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tvShows.count
     }
     
-
+    //  Individual Cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultsTableViewCell") as! SearchResultsTableViewCell
-        let tvShow = tvShows[indexPath.row]
-        var tvTitle = "Not Available"
-        var date = "TV Show"
-        if (tvShows.count == 0)
+        let tvShow = tvShows[indexPath.row] //Individual tv show from array of tv shows
+        var tvTitle = "Not Available"       //Assigned to not available in case of bad data, should never happen because of filter
+        var date = "TV Show"                //Tv Shows dont have date from data
+        if (tvShows.count == 0)             //Should never happen because of filter
         {
             tvTitle = "No Results"
         }
-        if tvShow["original_name"] != nil
+        if (tvShow["original_name"] != nil)
         {
             tvTitle = tvShow["original_name"] as! String
         }
-        else if tvShow["original_title"] != nil
+        else if (tvShow["original_title"] != nil)
         {
             tvTitle = tvShow["original_title"] as! String
-            
             date = tvShow["release_date"] as! String
-            if (date != "")
+            
+            if (date != "")                 //Format Date
             {
                 let index = date.index(date.startIndex, offsetBy: 4)
                 date = String(date.prefix(upTo: index))
@@ -84,8 +91,8 @@ class SearchResultsTableViewController: UIViewController, UITableViewDelegate, U
         cell.synopsisLabel.text = synopsis
         cell.dateLabel.text = date
         
+        //Poster View
         let baseUrl = "https://image.tmdb.org/t/p/w185"
-
         if let posterPath = tvShow["poster_path"] as? String
         {
             let posterUrl = URL(string: baseUrl + posterPath)
@@ -93,6 +100,7 @@ class SearchResultsTableViewController: UIViewController, UITableViewDelegate, U
         }
         
         // if an unavailable movie-- disallow interaction to prevent error
+        // Should never happen because of filter
         if (tvTitle == "Not Available" || synopsis == "Not Available")
         {
             cell.isUserInteractionEnabled = false
@@ -101,15 +109,26 @@ class SearchResultsTableViewController: UIViewController, UITableViewDelegate, U
             return cell
         
     }
+    
+    // MARK: - Navigation
 
-    // MARK: - Table view data source
+    //  Segue to MovieDetailsViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // find selected show
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)!
+        let tvShow = tvShows[indexPath.row]
 
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
+        // Get the new view controller using segue.destination.
+        let detailsViewController = segue.destination as! MovieDetailsViewController
+        
+        // Pass the selected show to the new view controller.
+        detailsViewController.tvShow = tvShow
 
+        tableView.deselectRow(at: indexPath, animated: true)
 
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -147,59 +166,7 @@ class SearchResultsTableViewController: UIViewController, UITableViewDelegate, U
     */
 
 
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-        
-        // find selected show
-        let cell = sender as! UITableViewCell
-        let indexPath = tableView.indexPath(for: cell)!
-        let tvShow = tvShows[indexPath.row]
-
-        let detailsViewController = segue.destination as! MovieDetailsViewController
-        detailsViewController.tvShow = tvShow
-
-        tableView.deselectRow(at: indexPath, animated: true)
-
-
-//
-//        //TO DO!!!!
-//        //Set up API Request for providers here
-//
-//
-//        let showId = tvShow["id"] as! Int
-//
-//
-//
-//
-//        let url = URL(string: "https://api.themoviedb.org/3/movie/\(showId)/watch/providers?api_key=081cd3e558e599982d21d7d81eecb1cc")!
-//        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
-//        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
-//        let task = session.dataTask(with: request) { (data, response, error) in
-//             // This will run when the network request returns
-//             if let error = error {
-//                    print(error.localizedDescription)
-//             } else if let data = data {
-//                    let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-//
-//                    // TODO: Get the array of movies
-//
-//                self.providers = dataDictionary["results"] as! [[String: Any]]
-//
-//
-//
-//
-//
-//
-//             }
-//        }
-//
-//        task.resume()
-    }
  
 
 

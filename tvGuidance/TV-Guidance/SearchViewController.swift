@@ -11,6 +11,7 @@ class SearchViewController: UIViewController {
     
     @IBOutlet weak var searchTextField: UISearchTextField!
     
+    //Dictionary of multisearch API call results
     var tvShows = [[String: Any]]()
 
     override func viewDidLoad() {
@@ -27,16 +28,17 @@ class SearchViewController: UIViewController {
     }
     
 
-    
-    
     @objc func dismisskeyboard(){
         self.view.endEditing(true)
     }
     
+    
     @IBAction func onPressSearch(_ sender: Any) {
         
+        //Edit text for multisearch API Call
         let searchText = searchTextField.text?.replacingOccurrences(of: " ", with: "%20")
         
+        //multisearch API Call
         let url = URL(string: "https://api.themoviedb.org/3/search/multi?api_key=081cd3e558e599982d21d7d81eecb1cc&language=en-US&query=\(searchText ?? "")&page=1&include_adult=false")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
@@ -47,8 +49,8 @@ class SearchViewController: UIViewController {
              } else if let data = data {
                     let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
 
-                    // TODO: Get the array of movies
-                
+
+                // Multisearch API Call results
                 self.tvShows = dataDictionary["results"] as! [[String: Any]]
                 
                 // filter results to only tv shows with title synopsis and poster
@@ -63,12 +65,9 @@ class SearchViewController: UIViewController {
 
 
                 })
-                    // TODO: Store the movies in a property to use elsewhere
-                    // TODO: Reload your table view data
                 
+                //Segue on button press
                 self.performSegue(withIdentifier: "resultsSegue", sender: self)
-               
-
 
              }
         }
@@ -84,18 +83,12 @@ class SearchViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-
         // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
         let searchResultsViewController = segue.destination as! SearchResultsTableViewController
+        
+        // Pass the selected object to the new view controller.
         searchResultsViewController.tvShows = self.tvShows
         
-
-        
-        
-        
-        
     }
-    
 
 }

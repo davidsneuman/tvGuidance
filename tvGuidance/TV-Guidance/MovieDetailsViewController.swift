@@ -19,10 +19,10 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
     @IBOutlet weak var watchFreeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
-    var tvShow: [String:Any]!
-    var tvShowProvidersResults = [String: Any]()
-    var usResults = [String: Any]()
-    var flatrate = [NSDictionary]()
+    var tvShow: [String:Any]!                       //Individual TV Show / Movie
+    var tvShowProvidersResults = [String: Any]()    //Watch providers of TV Show / Movie
+    var usResults = [String: Any]()                 //Filter to Watch providers in United States
+    var flatrate = [NSDictionary]()                 //Filter to free watch providers
     
     
     override func viewDidLoad() {
@@ -33,7 +33,6 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
         
         
         // Collection view layout
-        
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         
         layout.minimumLineSpacing = 5
@@ -44,7 +43,9 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
         
         
         var tvTitle = ""
-        var date = "TV Show"
+        var date = "TV Show"    //TV shows do not have date in API results
+        
+        //Titles have different value for movie / tv show
         if tvShow["original_name"] != nil
         {
             tvTitle = tvShow["original_name"] as! String
@@ -54,6 +55,7 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
             tvTitle = tvShow["original_title"] as! String
             
             date = tvShow["release_date"] as! String
+            // Format date: (2021)
             if (date != "")
             {
                 let index = date.index(date.startIndex, offsetBy: 4)
@@ -61,21 +63,23 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
                 date = "(\(date))"
             }
         }
+        
         titleLabel.text = tvTitle
         titleLabel.sizeToFit()
         dateLabel.text = date
-        
         synopsisLabel.text = tvShow["overview"] as? String ?? ""
         synopsisLabel.sizeToFit()
         
+        //Poster View
         let baseUrl = "https://image.tmdb.org/t/p/w500"
-
         if let posterPath = tvShow["poster_path"] as? String
         {
         let posterUrl = URL(string: baseUrl + posterPath)
       
         posterView.af.setImage(withURL: posterUrl!)
         }
+        
+        //Backdrop View
         if let backdropPath = tvShow["backdrop_path"] as? String
         {
         let backdropUrl = URL(string: "https://image.tmdb.org/t/p/w780" + backdropPath)
@@ -84,8 +88,10 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
         }
         
         
+        //Format api call for watch providers
         var url = URL(string: "")
-        // api call for watch providers
+        
+        //Different API Calls for tv shows vs movies
         if (tvShow["media_type"] as! String == "tv")
         {
             let tvId = "\(tvShow["id"] ?? "")"
@@ -101,6 +107,7 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
             print("error in watch provider call")
         }
         
+        //API Call for watch providers
         let request = URLRequest(url: url! , cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in
@@ -110,32 +117,25 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
              } else if let data = data {
                     let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
 
-                    // TODO: Get the array of movies
-                
+                //Dictionary of providers
                 self.tvShowProvidersResults =  dataDictionary["results"] as? [String: Any] ?? [:]
+                //Filter to US results
                 self.usResults = self.tvShowProvidersResults["US"] as? [String: Any] ?? [:]
+                //Filter to Free watch providers
                 self.flatrate = self.usResults["flatrate"] as? [NSDictionary] ?? []
                 
                 
-                
-                    // TODO: Store the movies in a property to use elsewhere
-                    // TODO: Reload your table view data
                 self.collectionView.reloadData()
-                
-
              }
-            
         }
         task.resume()
-        
-    
     }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if (flatrate.count == 0)
         {
-            return 1
+            return 1 //To display "not available" logo
         }
         return flatrate.count
     }
@@ -143,12 +143,13 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WatchProviderCell", for: indexPath) as! WatchProviderCell
 
-        if (flatrate.count == 0)
+        if (flatrate.count == 0) //"not available" logo
         {
             cell.watchProviderLogo.image = UIImage(named: "notAvailable")
             return cell
         }
         
+        // format watch providers URL
         let providers = flatrate[indexPath.item]
 
         let baseProviderUrl = "https://image.tmdb.org/t/p/w185"
@@ -156,47 +157,15 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
         if (logoPath != "")
         {
             let providerLogoUrl = URL(string: baseProviderUrl + logoPath)
-            print(providerLogoUrl!)
             cell.watchProviderLogo.af.setImage(withURL: providerLogoUrl!)
         }
         
-        
         return cell
     }
-    
 
-    
-    
-    
- 
-    // TO DO!!!!!
-    // Set up collection view with watch provider logos
 
 }
-//
-        
-//        titleLabel.text = tvShow["original_name"] as? String
-//
-//
-//
-//        let baseUrl = "https://image.tmdb.org/t/p/w342"
-//        let posterPath = tvShow["poster_path"] as! String
-//        let posterUrl = URL(string: baseUrl + posterPath)!
-//
-//        posterView.af.setImage(withURL: posterUrl)
-        
-        
-        // change the watch on section images based on the api results
-//        providersCollection = tvShowProviders["flatrate"]
-               
-//        if(tvShowProviders["provider_name"] == "fuboTV") {
-//            var image: UIImage = UIImage(named: "fubotv")!
-            
-//        }
-        
-        // Do any additional setup after loading the view.
-//    }
-    
+
     
     /*
     // MARK: - Navigation
