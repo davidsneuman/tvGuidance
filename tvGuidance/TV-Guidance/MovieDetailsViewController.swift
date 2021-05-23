@@ -17,7 +17,7 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var synopsisLabel: UILabel!
     @IBOutlet weak var watchFreeLabel: UILabel!
-    
+    @IBOutlet weak var dateLabel: UILabel!
     
     var tvShow: [String:Any]!
     var tvShowProvidersResults = [String: Any]()
@@ -43,8 +43,8 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
         layout.itemSize = CGSize(width: width, height: width * 6/7)
         
         
-        
         var tvTitle = ""
+        var date = "TV Show"
         if tvShow["original_name"] != nil
         {
             tvTitle = tvShow["original_name"] as! String
@@ -52,9 +52,18 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
         else if tvShow["original_title"] != nil
         {
             tvTitle = tvShow["original_title"] as! String
+            
+            date = tvShow["release_date"] as! String
+            if (date != "")
+            {
+                let index = date.index(date.startIndex, offsetBy: 4)
+                date = String(date.prefix(upTo: index))
+                date = "(\(date))"
+            }
         }
         titleLabel.text = tvTitle
         titleLabel.sizeToFit()
+        dateLabel.text = date
         
         synopsisLabel.text = tvShow["overview"] as? String ?? ""
         synopsisLabel.sizeToFit()

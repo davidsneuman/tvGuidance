@@ -57,7 +57,7 @@ class SearchResultsTableViewController: UIViewController, UITableViewDelegate, U
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultsTableViewCell") as! SearchResultsTableViewCell
         let tvShow = tvShows[indexPath.row]
         var tvTitle = "Not Available"
-        
+        var date = "TV Show"
         if (tvShows.count == 0)
         {
             tvTitle = "No Results"
@@ -69,11 +69,20 @@ class SearchResultsTableViewController: UIViewController, UITableViewDelegate, U
         else if tvShow["original_title"] != nil
         {
             tvTitle = tvShow["original_title"] as! String
+            
+            date = tvShow["release_date"] as! String
+            if (date != "")
+            {
+                let index = date.index(date.startIndex, offsetBy: 4)
+                date = String(date.prefix(upTo: index))
+                date = "(\(date))"
+            }
         }
         
         let synopsis = tvShow["overview"] as? String ?? "Not available"
         cell.titleLabel.text = tvTitle
         cell.synopsisLabel.text = synopsis
+        cell.dateLabel.text = date
         
         let baseUrl = "https://image.tmdb.org/t/p/w185"
 

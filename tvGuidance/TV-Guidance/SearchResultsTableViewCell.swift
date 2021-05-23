@@ -12,6 +12,7 @@ class SearchResultsTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var synopsisLabel: UILabel!
     @IBOutlet weak var posterView: UIImageView!
+    @IBOutlet weak var dateLabel: UILabel!
     
     
     override func awakeFromNib() {
