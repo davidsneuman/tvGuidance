@@ -2,7 +2,7 @@
 //  SearchViewController.swift
 //  TV-Guidance
 //
-//  Created by Kevin Xie on 4/23/21.
+//  Created by David Neuman on 4/23/21.
 //
 
 import UIKit
@@ -20,6 +20,7 @@ class SearchViewController: UIViewController {
         let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismisskeyboard))
         self.view.addGestureRecognizer(tap)
         
+        searchTextField.delegate = self
         searchTextField.clearButtonMode = .always
         searchTextField.clearButtonMode = .whileEditing
         // Do any additional setup after loading the view.
@@ -30,6 +31,7 @@ class SearchViewController: UIViewController {
 
     @objc func dismisskeyboard(){
         self.view.endEditing(true)
+        
     }
     
     
@@ -74,8 +76,7 @@ class SearchViewController: UIViewController {
         
         task.resume()
     }
-    
-    
+
     
     
     // MARK: - Navigation
@@ -91,4 +92,12 @@ class SearchViewController: UIViewController {
         
     }
 
+}
+
+// return key dismiss' keyboard
+extension SearchViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchTextField.resignFirstResponder() // dismiss keyboard
+        return true
+    }
 }

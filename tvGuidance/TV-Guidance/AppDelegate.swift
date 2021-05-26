@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  TV-Guidance
 //
-//  Created by Kevin Xie on 4/23/21.
+//  Created by David Neuman on 4/23/21.
 //
 
 import UIKit

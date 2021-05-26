@@ -2,7 +2,7 @@
 //  MovieDetailsViewController.swift
 //  TV-Guidance
 //
-//  Created by Kevin Xie on 4/24/21.
+//  Created by David Neuman on 4/24/21.
 //
 
 import UIKit
@@ -40,7 +40,6 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
         
         let width = (view.frame.size.width - layout.minimumInteritemSpacing * 3) / 4
         layout.itemSize = CGSize(width: width, height: width * 6/7)
-        
         
         var tvTitle = ""
         var date = "TV Show"    //TV shows do not have date in API results

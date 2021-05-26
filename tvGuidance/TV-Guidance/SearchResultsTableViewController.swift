@@ -2,7 +2,7 @@
 //  SearchResultsTableViewController.swift
 //  TV-Guidance
 //
-//  Created by Farhan Tanmoy on 4/30/21.
+//  Created by David Neuman on 4/30/21.
 //
 
 import UIKit
