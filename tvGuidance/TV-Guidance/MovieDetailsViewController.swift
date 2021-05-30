@@ -127,6 +127,7 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
                 self.collectionView.reloadData()
              }
         }
+        
         task.resume()
     }
     
