@@ -11,6 +11,7 @@ class SearchViewController: UIViewController {
     
     @IBOutlet weak var searchTextField: UISearchTextField!
     
+    @IBOutlet weak var searchButton: UIButton!
     //Dictionary of multisearch API call results
     var tvShows = [[String: Any]]()
 
@@ -23,10 +24,7 @@ class SearchViewController: UIViewController {
         searchTextField.delegate = self
         searchTextField.clearButtonMode = .always
         searchTextField.clearButtonMode = .whileEditing
-        
-
-        
-
+        self.searchButton.layer.cornerRadius = 8
     }
     
 
@@ -106,3 +104,4 @@ extension SearchViewController: UITextFieldDelegate {
         return true
     }
 }
+

@@ -32,16 +32,14 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Gy-Wf-eAy">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Gy-Wf-eAy">
                                 <rect key="frame" x="164.66666666666666" y="404" width="85" height="40"/>
-                                <color key="backgroundColor" red="0.99074572319999998" green="0.2840589583" blue="0.52158284190000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="H42-ze-cyM"/>
                                     <constraint firstAttribute="width" constant="85" id="olY-VV-mTN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                 <size key="titleShadowOffset" width="0.0" height="34"/>
-                                <state key="normal" title="Search">
+                                <state key="normal" title="Search" backgroundImage="buttonGradient">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -75,6 +73,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="nbR-yB-jPW"/>
                     <connections>
+                        <outlet property="searchButton" destination="9Gy-Wf-eAy" id="aJc-FO-qH1"/>
                         <outlet property="searchTextField" destination="MXp-ta-MHs" id="0fv-Su-7Rp"/>
                         <segue destination="KT6-Od-KoS" kind="show" identifier="resultsSegue" id="fXv-QH-Hc5"/>
                     </connections>
@@ -339,6 +338,7 @@
     </scenes>
     <resources>
         <image name="WatchFreeIcon" width="845" height="75"/>
+        <image name="buttonGradient" width="85" height="40"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
