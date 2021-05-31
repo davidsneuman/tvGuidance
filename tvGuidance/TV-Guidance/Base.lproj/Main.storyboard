@@ -186,7 +186,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fEq-RB-WRa">
-                                <rect key="frame" x="0.0" y="437.33333333333331" width="414" height="99.999999999999943"/>
+                                <rect key="frame" x="0.0" y="440.33333333333331" width="414" height="99.999999999999943"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="gYK-c1-EEF"/>
@@ -240,14 +240,26 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the synopsis of the movie or TV show" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="7" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gJy-Re-vvc">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJy-Re-vvc" customClass="ExpandableLabel" customModule="ExpandableLabel">
                                 <rect key="frame" x="8" y="380" width="398" height="20.333333333333314"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="This is the synopsis of the movie or TV show">
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldCollapse" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldExpand" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Watch for free on:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ag-mS-ysV">
-                                <rect key="frame" x="8" y="416.33333333333331" width="145.66666666666666" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <rect key="frame" x="8" y="416.33333333333331" width="406" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" red="0.99074572319999998" green="0.2840589583" blue="0.52158284190000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -269,18 +281,18 @@
                             <constraint firstItem="fEq-RB-WRa" firstAttribute="leading" secondItem="wV1-Qg-sux" secondAttribute="leading" id="HMf-eU-vX3"/>
                             <constraint firstItem="0bv-T3-12i" firstAttribute="top" secondItem="4wQ-3q-rLi" secondAttribute="top" constant="280" id="Izw-2f-6FL"/>
                             <constraint firstItem="wV1-Qg-sux" firstAttribute="trailing" secondItem="0bv-T3-12i" secondAttribute="trailing" constant="8" id="J6G-gU-dQf"/>
+                            <constraint firstItem="gJy-Re-vvc" firstAttribute="leading" secondItem="wV1-Qg-sux" secondAttribute="leading" constant="8" id="LHS-jj-RFe"/>
                             <constraint firstItem="gJy-Re-vvc" firstAttribute="top" secondItem="u8g-7O-QgS" secondAttribute="bottom" constant="20" id="Mgz-KV-Hjt"/>
-                            <constraint firstItem="7ag-mS-ysV" firstAttribute="top" secondItem="gJy-Re-vvc" secondAttribute="bottom" constant="16" id="NqY-gX-4xV"/>
+                            <constraint firstItem="7ag-mS-ysV" firstAttribute="top" secondItem="gJy-Re-vvc" secondAttribute="bottom" priority="250" constant="16" id="NqY-gX-4xV"/>
                             <constraint firstItem="gJy-Re-vvc" firstAttribute="centerX" secondItem="6rB-hI-Dcv" secondAttribute="centerX" id="S1x-BR-b5g"/>
                             <constraint firstItem="0bv-T3-12i" firstAttribute="top" secondItem="6rB-hI-Dcv" secondAttribute="bottom" constant="4" id="URH-9y-KZt"/>
                             <constraint firstItem="6rB-hI-Dcv" firstAttribute="leading" secondItem="wV1-Qg-sux" secondAttribute="leading" id="XZH-wZ-k8V"/>
                             <constraint firstItem="6rB-hI-Dcv" firstAttribute="top" secondItem="wV1-Qg-sux" secondAttribute="top" id="aGL-Rn-PiO"/>
-                            <constraint firstItem="gJy-Re-vvc" firstAttribute="leading" secondItem="u8g-7O-QgS" secondAttribute="leading" id="hlJ-oo-otw"/>
+                            <constraint firstItem="gJy-Re-vvc" firstAttribute="leading" secondItem="u8g-7O-QgS" secondAttribute="leading" id="c7F-IS-ekp"/>
                             <constraint firstItem="0bv-T3-12i" firstAttribute="leading" secondItem="u8g-7O-QgS" secondAttribute="trailing" constant="8" symbolic="YES" id="jIs-Jp-T5z"/>
                             <constraint firstItem="wV1-Qg-sux" firstAttribute="trailing" secondItem="fEq-RB-WRa" secondAttribute="trailing" id="pS3-0u-jaP"/>
-                            <constraint firstItem="wV1-Qg-sux" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7ag-mS-ysV" secondAttribute="trailing" symbolic="YES" id="vzr-oN-JIi"/>
+                            <constraint firstItem="wV1-Qg-sux" firstAttribute="trailing" secondItem="7ag-mS-ysV" secondAttribute="trailing" symbolic="YES" id="vzr-oN-JIi"/>
                             <constraint firstItem="wV1-Qg-sux" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Xh7-Li-2At" secondAttribute="trailing" symbolic="YES" id="x7z-5g-hoW"/>
-                            <constraint firstItem="gJy-Re-vvc" firstAttribute="leading" secondItem="wV1-Qg-sux" secondAttribute="leading" constant="8" id="xdt-Qd-1by"/>
                             <constraint firstItem="Xh7-Li-2At" firstAttribute="top" secondItem="0bv-T3-12i" secondAttribute="bottom" constant="3" id="xxz-gZ-3Ld"/>
                             <constraint firstItem="u8g-7O-QgS" firstAttribute="top" secondItem="wV1-Qg-sux" secondAttribute="top" constant="107" id="yfa-Ke-fhM"/>
                             <constraint firstItem="7ag-mS-ysV" firstAttribute="leading" secondItem="wV1-Qg-sux" secondAttribute="leading" constant="8" id="zL2-qH-Njd"/>
@@ -292,7 +304,7 @@
                         <outlet property="collectionView" destination="fEq-RB-WRa" id="Ck5-KB-G4U"/>
                         <outlet property="dateLabel" destination="Xh7-Li-2At" id="TYr-PY-WsR"/>
                         <outlet property="posterView" destination="u8g-7O-QgS" id="Dq1-22-eEu"/>
-                        <outlet property="synopsisLabel" destination="gJy-Re-vvc" id="uzd-s9-LuT"/>
+                        <outlet property="synopsisLabel" destination="gJy-Re-vvc" id="Tkb-cv-Jtp"/>
                         <outlet property="titleLabel" destination="0bv-T3-12i" id="bsy-ez-iGs"/>
                         <outlet property="watchFreeLabel" destination="7ag-mS-ysV" id="hPs-8C-QzY"/>
                     </connections>
@@ -326,6 +338,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

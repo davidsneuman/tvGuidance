@@ -7,6 +7,7 @@
 
 import UIKit
 import AlamofireImage
+import ExpandableLabel
 
 class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -15,7 +16,7 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
     @IBOutlet weak var backdropView: UIImageView!
     @IBOutlet weak var posterView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var synopsisLabel: UILabel!
+    @IBOutlet weak var synopsisLabel: ExpandableLabel!
     @IBOutlet weak var watchFreeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
@@ -23,15 +24,12 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
     var tvShowProvidersResults = [String: Any]()    //Watch providers of TV Show / Movie
     var usResults = [String: Any]()                 //Filter to Watch providers in United States
     var flatrate = [NSDictionary]()                 //Filter to free watch providers
-    
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        
-        
         // Collection view layout
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         
@@ -66,8 +64,18 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
         titleLabel.text = tvTitle
         titleLabel.sizeToFit()
         dateLabel.text = date
+
+        synopsisLabel.layoutIfNeeded()
+        synopsisLabel.numberOfLines = 3
+        synopsisLabel.collapsedAttributedLink = NSAttributedString(string: "more", attributes: [NSAttributedString.Key.foregroundColor:UIColor.link])
+        synopsisLabel.expandedAttributedLink = NSAttributedString(string: "less", attributes: [NSAttributedString.Key.foregroundColor:UIColor.link])
+        
+        // update label expand or collapse state
+        synopsisLabel.collapsed = true
+        
         synopsisLabel.text = tvShow["overview"] as? String ?? ""
-        synopsisLabel.sizeToFit()
+
+        //synopsisLabel.sizeToFit()
         
         //Poster View
         let baseUrl = "https://image.tmdb.org/t/p/w500"

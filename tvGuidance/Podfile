@@ -7,7 +7,8 @@ target 'TV-Guidance' do
 
   # Pods for TV-Guidance
   pod "AlamofireImage"
-
+  pod "ExpandableLabel"
+  
   target 'TV-GuidanceTests' do
     inherit! :search_paths
     # Pods for testing
