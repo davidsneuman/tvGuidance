@@ -23,7 +23,8 @@ class SearchViewController: UIViewController {
         searchTextField.delegate = self
         searchTextField.clearButtonMode = .always
         searchTextField.clearButtonMode = .whileEditing
-        // Do any additional setup after loading the view.
+        
+
         
 
     }

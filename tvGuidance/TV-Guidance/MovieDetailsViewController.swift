@@ -17,7 +17,7 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
     @IBOutlet weak var posterView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var synopsisLabel: ExpandableLabel!
-    @IBOutlet weak var watchFreeLabel: UILabel!
+    @IBOutlet weak var watchFree: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
     
     var tvShow: [String:Any]!                       //Individual TV Show / Movie

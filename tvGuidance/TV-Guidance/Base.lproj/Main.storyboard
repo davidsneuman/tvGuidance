@@ -186,7 +186,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fEq-RB-WRa">
-                                <rect key="frame" x="0.0" y="440.33333333333331" width="414" height="99.999999999999943"/>
+                                <rect key="frame" x="0.0" y="431.33333333333331" width="414" height="99.999999999999943"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="gYK-c1-EEF"/>
@@ -241,7 +241,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJy-Re-vvc" customClass="ExpandableLabel" customModule="ExpandableLabel">
-                                <rect key="frame" x="8" y="380" width="398" height="20.333333333333314"/>
+                                <rect key="frame" x="8" y="380" width="398" height="20"/>
                                 <attributedString key="attributedText">
                                     <fragment content="This is the synopsis of the movie or TV show">
                                         <attributes>
@@ -257,25 +257,26 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="shouldExpand" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Watch for free on:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ag-mS-ysV">
-                                <rect key="frame" x="8" y="416.33333333333331" width="406" height="24"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" red="0.99074572319999998" green="0.2840589583" blue="0.52158284190000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xh7-Li-2At">
                                 <rect key="frame" x="133" y="311.66666666666669" width="38" height="20.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="WatchFreeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="sif-bI-Jrw">
+                                <rect key="frame" x="8" y="416.33333333333331" width="170" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="4Ex-t9-X8S"/>
+                                    <constraint firstAttribute="height" constant="15" id="5bE-oM-2Ct"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wV1-Qg-sux"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" systemColor="opaqueSeparatorColor"/>
                         <constraints>
-                            <constraint firstItem="fEq-RB-WRa" firstAttribute="top" secondItem="7ag-mS-ysV" secondAttribute="bottom" id="4Pp-Cw-17e"/>
                             <constraint firstItem="gJy-Re-vvc" firstAttribute="top" secondItem="4wQ-3q-rLi" secondAttribute="top" constant="380" id="6AD-cN-Cmz"/>
+                            <constraint firstItem="fEq-RB-WRa" firstAttribute="top" secondItem="sif-bI-Jrw" secondAttribute="bottom" id="7dB-II-rxo"/>
                             <constraint firstItem="6rB-hI-Dcv" firstAttribute="trailing" secondItem="wV1-Qg-sux" secondAttribute="trailing" id="8kW-s2-xij"/>
                             <constraint firstItem="Xh7-Li-2At" firstAttribute="leading" secondItem="u8g-7O-QgS" secondAttribute="trailing" constant="8" symbolic="YES" id="EZy-Pl-s34"/>
                             <constraint firstItem="fEq-RB-WRa" firstAttribute="leading" secondItem="wV1-Qg-sux" secondAttribute="leading" id="HMf-eU-vX3"/>
@@ -283,19 +284,18 @@
                             <constraint firstItem="wV1-Qg-sux" firstAttribute="trailing" secondItem="0bv-T3-12i" secondAttribute="trailing" constant="8" id="J6G-gU-dQf"/>
                             <constraint firstItem="gJy-Re-vvc" firstAttribute="leading" secondItem="wV1-Qg-sux" secondAttribute="leading" constant="8" id="LHS-jj-RFe"/>
                             <constraint firstItem="gJy-Re-vvc" firstAttribute="top" secondItem="u8g-7O-QgS" secondAttribute="bottom" constant="20" id="Mgz-KV-Hjt"/>
-                            <constraint firstItem="7ag-mS-ysV" firstAttribute="top" secondItem="gJy-Re-vvc" secondAttribute="bottom" priority="250" constant="16" id="NqY-gX-4xV"/>
                             <constraint firstItem="gJy-Re-vvc" firstAttribute="centerX" secondItem="6rB-hI-Dcv" secondAttribute="centerX" id="S1x-BR-b5g"/>
                             <constraint firstItem="0bv-T3-12i" firstAttribute="top" secondItem="6rB-hI-Dcv" secondAttribute="bottom" constant="4" id="URH-9y-KZt"/>
                             <constraint firstItem="6rB-hI-Dcv" firstAttribute="leading" secondItem="wV1-Qg-sux" secondAttribute="leading" id="XZH-wZ-k8V"/>
                             <constraint firstItem="6rB-hI-Dcv" firstAttribute="top" secondItem="wV1-Qg-sux" secondAttribute="top" id="aGL-Rn-PiO"/>
                             <constraint firstItem="gJy-Re-vvc" firstAttribute="leading" secondItem="u8g-7O-QgS" secondAttribute="leading" id="c7F-IS-ekp"/>
                             <constraint firstItem="0bv-T3-12i" firstAttribute="leading" secondItem="u8g-7O-QgS" secondAttribute="trailing" constant="8" symbolic="YES" id="jIs-Jp-T5z"/>
+                            <constraint firstItem="sif-bI-Jrw" firstAttribute="top" secondItem="gJy-Re-vvc" secondAttribute="bottom" constant="16" id="lG0-sD-1d9"/>
                             <constraint firstItem="wV1-Qg-sux" firstAttribute="trailing" secondItem="fEq-RB-WRa" secondAttribute="trailing" id="pS3-0u-jaP"/>
-                            <constraint firstItem="wV1-Qg-sux" firstAttribute="trailing" secondItem="7ag-mS-ysV" secondAttribute="trailing" symbolic="YES" id="vzr-oN-JIi"/>
+                            <constraint firstItem="sif-bI-Jrw" firstAttribute="leading" secondItem="wV1-Qg-sux" secondAttribute="leading" constant="8" id="pYd-Fp-IcY"/>
                             <constraint firstItem="wV1-Qg-sux" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Xh7-Li-2At" secondAttribute="trailing" symbolic="YES" id="x7z-5g-hoW"/>
                             <constraint firstItem="Xh7-Li-2At" firstAttribute="top" secondItem="0bv-T3-12i" secondAttribute="bottom" constant="3" id="xxz-gZ-3Ld"/>
                             <constraint firstItem="u8g-7O-QgS" firstAttribute="top" secondItem="wV1-Qg-sux" secondAttribute="top" constant="107" id="yfa-Ke-fhM"/>
-                            <constraint firstItem="7ag-mS-ysV" firstAttribute="leading" secondItem="wV1-Qg-sux" secondAttribute="leading" constant="8" id="zL2-qH-Njd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="drG-nP-uu7"/>
@@ -306,12 +306,12 @@
                         <outlet property="posterView" destination="u8g-7O-QgS" id="Dq1-22-eEu"/>
                         <outlet property="synopsisLabel" destination="gJy-Re-vvc" id="Tkb-cv-Jtp"/>
                         <outlet property="titleLabel" destination="0bv-T3-12i" id="bsy-ez-iGs"/>
-                        <outlet property="watchFreeLabel" destination="7ag-mS-ysV" id="hPs-8C-QzY"/>
+                        <outlet property="watchFree" destination="sif-bI-Jrw" id="pny-hq-IQX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vai-Zw-UDC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2508.6956521739135" y="70.3125"/>
+            <point key="canvasLocation" x="2508.6956521739135" y="70.108695652173921"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rHg-s5-Boa">
@@ -338,6 +338,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="WatchFreeIcon" width="845" height="75"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
