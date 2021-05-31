@@ -230,7 +230,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u8g-7O-QgS">
-                                <rect key="frame" x="8" y="146" width="117" height="214"/>
+                                <rect key="frame" x="8" y="151" width="117" height="209"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="117" id="31J-by-Dhr"/>
                                 </constraints>
@@ -260,6 +260,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wV1-Qg-sux"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" systemColor="opaqueSeparatorColor"/>
                         <constraints>
                             <constraint firstItem="fEq-RB-WRa" firstAttribute="top" secondItem="7ag-mS-ysV" secondAttribute="bottom" id="4Pp-Cw-17e"/>
                             <constraint firstItem="gJy-Re-vvc" firstAttribute="top" secondItem="4wQ-3q-rLi" secondAttribute="top" constant="380" id="6AD-cN-Cmz"/>
@@ -281,7 +282,7 @@
                             <constraint firstItem="wV1-Qg-sux" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Xh7-Li-2At" secondAttribute="trailing" symbolic="YES" id="x7z-5g-hoW"/>
                             <constraint firstItem="gJy-Re-vvc" firstAttribute="leading" secondItem="wV1-Qg-sux" secondAttribute="leading" constant="8" id="xdt-Qd-1by"/>
                             <constraint firstItem="Xh7-Li-2At" firstAttribute="top" secondItem="0bv-T3-12i" secondAttribute="bottom" constant="3" id="xxz-gZ-3Ld"/>
-                            <constraint firstItem="u8g-7O-QgS" firstAttribute="top" secondItem="wV1-Qg-sux" secondAttribute="top" constant="102" id="yfa-Ke-fhM"/>
+                            <constraint firstItem="u8g-7O-QgS" firstAttribute="top" secondItem="wV1-Qg-sux" secondAttribute="top" constant="107" id="yfa-Ke-fhM"/>
                             <constraint firstItem="7ag-mS-ysV" firstAttribute="leading" secondItem="wV1-Qg-sux" secondAttribute="leading" constant="8" id="zL2-qH-Njd"/>
                         </constraints>
                     </view>
@@ -325,6 +326,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
