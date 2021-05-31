@@ -35,8 +35,8 @@ class MovieDetailsViewController: UIViewController, UICollectionViewDataSource, 
         // Collection view layout
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         
-        layout.minimumLineSpacing = 5
-        layout.minimumInteritemSpacing = 5
+        layout.minimumLineSpacing = 8
+        layout.minimumInteritemSpacing = 0
         
         let width = (view.frame.size.width - layout.minimumInteritemSpacing * 3) / 4
         layout.itemSize = CGSize(width: width, height: width * 6/7)
